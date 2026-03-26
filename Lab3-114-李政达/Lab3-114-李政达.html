@@ -15,8 +15,21 @@
     th { background: #e4edfb; color: #1f4f90; }
     .header-label { background: #7b92c6; color: #fff; font-weight: bold; }
     .highlight { background: #e6f3ff; }
-    .photo-box { width: 110px; height: 145px; border: 1px solid #7895c4; display: flex; align-items: center; justify-content: center; background: #eaf2ff; }
-    .photo-box img { max-width: 100%; max-height: 100%; object-fit: cover; }
+    .photo-box { 
+      width: 110px; 
+      height: 145px; 
+      border: 1px solid #7895c4; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      background: #eaf2ff;
+      overflow: hidden; /* 防止图片溢出 */
+    }
+    .photo-box img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; /* 保持比例填充，自适应裁剪 */
+    }
     .evaluation { text-align: left; padding: 12px; line-height: 1.7; }
     .footer-note { margin: 18px; color: #415d85; font-size: 14px; }
   </style>
@@ -34,7 +47,9 @@
         <td>男</td>
         <th class="header-label">年龄</th>
         <td>20</td>
-        <td rowspan="4" colspan="2" class="photo-box"><img src="https://www.w3schools.com/howto/img_avatar.png" alt="真实照片" title="个人照片" /></td>
+        <td rowspan="4" colspan="2" class="photo-box">
+          <img src="https://picsum.photos/id/823/110/145" alt="个人照片" title="李政达" />
+        </td>
       </tr>
       <tr>
         <th class="header-label">籍贯</th>
