@@ -1,0 +1,64 @@
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --accent:#1e90ff;
+  --muted:#6b7280;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Inter, 'Noto Serif SC', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  background:linear-gradient(180deg,#f3f7fb 0%, #ffffff 40%);
+  color:#102a43;
+}
+.site-header{padding:34px 18px 18px;text-align:center}
+.site-header h1{margin:0;font-weight:800;letter-spacing:1px;font-size:32px}
+.subtitle{margin:6px 0 0;color:var(--muted)}
+.container{max-width:1100px;margin:28px auto;padding:0 18px 120px}
+.theme{background:var(--card);border-radius:12px;padding:20px;margin:26px 0;box-shadow:0 6px 24px rgba(16,42,67,0.08)}
+.theme-title{margin:0 0 14px;font-family:'Noto Serif SC';font-weight:700;display:inline-block;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cell{overflow:hidden;border-radius:10px}
+.img{background:linear-gradient(135deg,#e6f0ff 0%, #dff3e6 100%);height:160px;display:flex;align-items:center;justify-content:center;position:relative;transition:transform .35s cubic-bezier(.2,.8,.2,1);box-shadow:inset 0 -6px 20px rgba(16,42,67,0.03)}
+.img span{font-weight:600;color:#073b4c}
+
+/* 第一主题：第一行图片放大1.5倍 */
+.theme1 .grid .cell:nth-child(-n+3) .img:hover{transform:scale(1.5)}
+
+/* 第一主题：标题悬停旋转45度 */
+.theme1 .theme-title:hover{transform:rotate(45deg)}
+
+/* 第二主题：父相子绝布局 */
+.abs-grid{position:relative;height:520px}
+.abs-grid .cell{position:absolute;width:30%;height:30%;}
+.abs-grid .cell .img{height:100%;width:100%;border-radius:10px}
+.abs-grid .c1{left:0;top:0}
+.abs-grid .c2{left:35%;top:0}
+.abs-grid .c3{left:70%;top:0}
+.abs-grid .c4{left:0;top:35%}
+.abs-grid .c5{left:35%;top:35%}
+.abs-grid .c6{left:70%;top:35%}
+.abs-grid .c7{left:0;top:70%}
+.abs-grid .c8{left:35%;top:70%}
+.abs-grid .c9{left:70%;top:70%}
+
+/* 第二主题图片悬浮倾斜30度 */
+.theme2 .img:hover{transform:rotate(30deg) translateZ(0)}
+
+/* 第三主题：轻柔悬浮 */
+.theme3 .img:hover{transform:translateY(-6px)}
+
+.site-footer{position:fixed;left:0;right:0;bottom:0;background:linear-gradient(90deg,#0f1724,#1e293b);color:#fff;padding:12px 18px;text-align:center;font-size:14px}
+
+@media (max-width:880px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .abs-grid{height:720px}
+  .abs-grid .cell{width:45%}
+  .abs-grid .c3,.abs-grid .c6,.abs-grid .c9{left:55%}
+  .abs-grid .c2,.abs-grid .c5,.abs-grid .c8{left:5%}
+}
+@media (max-width:520px){
+  .grid{grid-template-columns:repeat(1,1fr)}
+  .abs-grid{height:900px}
+  .abs-grid .cell{position:relative;width:100%;height:150px;margin-bottom:12px}
+}

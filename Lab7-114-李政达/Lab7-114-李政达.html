@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>烟台理工校园</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>烟台理工校园</h1>
+  </header>
+
+  <main class="container">
+    <!-- Theme 1: CSS Grid (normal) -->
+    <section class="theme theme1">
+      <h2 class="theme-title">校园风光 · 主题一</h2>
+      <div class="grid">
+        <!-- 3x3 Grid for theme 1 -->
+        <!-- First row images will scale on hover -->
+        <!-- We'll create 9 cells but only style first row differently -->
+        <div class="cell"><div class="img"><span>教学楼 A</span></div></div>
+        <div class="cell"><div class="img"><span>图书馆</span></div></div>
+        <div class="cell"><div class="img"><span>操场</span></div></div>
+        <div class="cell"><div class="img"><span>实验楼</span></div></div>
+        <div class="cell"><div class="img"><span>食堂</span></div></div>
+        <div class="cell"><div class="img"><span>艺术中心</span></div></div>
+        <div class="cell"><div class="img"><span>湖畔</span></div></div>
+        <div class="cell"><div class="img"><span>绿植</span></div></div>
+        <div class="cell"><div class="img"><span>校门</span></div></div>
+      </div>
+    </section>
+
+    <!-- Theme 2: absolute positioning (parent relative, children absolute) -->
+    <section class="theme theme2">
+      <h2 class="theme-title">校园生活 · 主题二（绝对定位实现）</h2>
+      <div class="abs-grid">
+        <div class="cell c1"><div class="img"><span>晨跑</span></div></div>
+        <div class="cell c2"><div class="img"><span>读书</span></div></div>
+        <div class="cell c3"><div class="img"><span>合影</span></div></div>
+        <div class="cell c4"><div class="img"><span>讲座</span></div></div>
+        <div class="cell c5"><div class="img"><span>社团</span></div></div>
+        <div class="cell c6"><div class="img"><span>实验</span></div></div>
+        <div class="cell c7"><div class="img"><span>晚霞</span></div></div>
+        <div class="cell c8"><div class="img"><span>图书角</span></div></div>
+        <div class="cell c9"><div class="img"><span>自习</span></div></div>
+      </div>
+    </section>
+
+    <!-- Theme 3: CSS Grid (regular) -->
+    <section class="theme theme3">
+      <h2 class="theme-title">校园文化 · 主题三</h2>
+      <div class="grid">
+        <div class="cell"><div class="img"><span>迎新</span></div></div>
+        <div class="cell"><div class="img"><span>志愿服务</span></div></div>
+        <div class="cell"><div class="img"><span>运动会</span></div></div>
+        <div class="cell"><div class="img"><span>科技节</span></div></div>
+        <div class="cell"><div class="img"><span>艺术节</span></div></div>
+        <div class="cell"><div class="img"><span>创新</span></div></div>
+        <div class="cell"><div class="img"><span>讲座</span></div></div>
+        <div class="cell"><div class="img"><span>成果展示</span></div></div>
+        <div class="cell"><div class="img"><span>校园夜景</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">© 2026 烟台理工学院</footer>
+
+</body>
+</html>
