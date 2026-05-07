@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab8-000-YourName</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: radial-gradient(circle at top, #1b2a45 0%, #0a111b 100%);
+      color: #f5f7fb;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page {
+      width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .heading {
+      text-align: center;
+      max-width: 1000px;
+      line-height: 1.4;
+    }
+
+    .heading h1 {
+      margin: 0;
+      font-size: clamp(2rem, 3vw, 3.4rem);
+      letter-spacing: 0.04em;
+    }
+
+    .heading p {
+      margin: 12px auto 0;
+      max-width: 720px;
+      color: #c5d4f0;
+      font-size: 1rem;
+    }
+
+    .gallery {
+      width: 100%;
+      max-width: 1600px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+    }
+
+    .card {
+      width: calc((100% - 50px) / 6);
+      min-width: 130px;
+      aspect-ratio: 4 / 3;
+      perspective: 1400px;
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transform-origin: center center;
+      transition: transform 6s ease-in-out;
+      box-shadow: 0 24px 60px rgba(5, 25, 55, 0.28);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .card-inner.rotate {
+      transform: rotateX(2160deg);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+
+    .caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      padding: 0 12px;
+      color: #eef7ff;
+      font-size: 0.9rem;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.22);
+      pointer-events: none;
+    }
+
+    .card-outer {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hint {
+      color: #a8b7d9;
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 1200px) {
+      .gallery {
+        gap: 8px;
+      }
+      .card {
+        width: calc((100% - 40px) / 6);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        padding: 12px;
+      }
+      .gallery {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .card {
+        width: calc((100% - 40px) / 3);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .heading h1 {
+        font-size: 2.2rem;
+      }
+      .card {
+        width: calc((100% - 32px) / 2);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="heading">
+      <h1>Lab8: 六张图片绕 X 轴旋转</h1>
+      <p>页面采用横屏布局，六个卡片排列不重叠，每张图片在页面加载后沿 X 轴旋转 6 周，使用 CSS transition 过渡属性实现。请将此文件重命名为 <strong>Lab8-个人学号后三位-个人姓名.html</strong> 并提交到 GitHub。</p>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <div class="card"><div class="card-inner"><div class="card-outer"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Scene 1"><div class="caption">自然光影</div></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-outer"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80" alt="Scene 2"><div class="caption">艺术构图</div></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-outer"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Scene 3"><div class="caption">精致细节</div></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-outer"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80" alt="Scene 4"><div class="caption">优雅色彩</div></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-outer"><img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80" alt="Scene 5"><div class="caption">视觉张力</div></div></div></div>
+      <div class="card"><div class="card-inner"><div class="card-outer"><img src="https://images.unsplash.com/photo-1494524263410-459dbfdfb5d6?auto=format&fit=crop&w=900&q=80" alt="Scene 6"><div class="caption">静谧美学</div></div></div></div>
+    </div>
+
+    <div class="hint">页面加载后自动播放旋转。若需复现效果，请刷新页面。</div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function () {
+      const cards = document.querySelectorAll('.card-inner');
+      requestAnimationFrame(() => {
+        cards.forEach(card => card.classList.add('rotate'));
+      });
+    });
+  </script>
+</body>
+</html>
